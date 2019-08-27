@@ -1,0 +1,16 @@
+---
+dependencies:
+  - role: ansible-role-toolchain
+    toolchain_url: "{{ java_toolchain_url }}"
+    toolchain_dest: "{{ java_toolchain_dest }}"
+galaxy_info:
+  author: MongoDB
+  description: Installs the java toolchain
+  license: Apache
+  min_ansible_version: 2.8
+  platforms:
+    - name: debian
+      versions:
+        - buster
+  galaxy_tags:
+    - java-toolchain

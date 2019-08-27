@@ -1,0 +1,8 @@
+---
+- become: true
+  name: Converge
+  hosts: all
+  roles:
+    - role: ansible-role-java-toolchain
+      vars:
+        java_toolchain_sha: 684d8a531d064469d4ca29e831e5929420e486d6

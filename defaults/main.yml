@@ -1,0 +1,4 @@
+---
+java_toolchain_dest: /opt
+java_toolchain_sha: ""
+java_toolchain_url: https://s3.amazonaws.com/boxes.10gen.com/build/toolchain-drivers/mongo-java-driver/java-toolchain-{{ distro }}_{{ architecture }}-{{ java_toolchain_sha }}.tar.gz
