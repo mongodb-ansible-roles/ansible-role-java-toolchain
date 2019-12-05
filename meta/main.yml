@@ -2,7 +2,8 @@
 dependencies:
   - role: ansible-role-toolchain
     toolchain_url: "{{ java_toolchain_url }}"
-    toolchain_dest: "{{ java_toolchain_dest }}"
+    toolchain_final_dest: "{{ java_toolchain_final_dest }}"
+    toolchain_version: "{{ java_toolchain_sha }}"
 galaxy_info:
   author: MongoDB
   description: Installs the java toolchain
