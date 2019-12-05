@@ -4,6 +4,11 @@ describe directory('/opt/java') do
   it { should exist }
 end
 
+describe file('/opt/java/toolchain_version') do
+  it { should exist }
+  its('content') { should match(/testing_java_sha/) }
+end
+
 # rubocop:disable LineLength
 
 describe command('/opt/java/jdk5/bin/java -version') do
