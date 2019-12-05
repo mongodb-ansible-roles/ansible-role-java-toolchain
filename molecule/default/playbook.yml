@@ -5,4 +5,5 @@
   roles:
     - role: ansible-role-java-toolchain
       vars:
-        java_toolchain_sha: 684d8a531d064469d4ca29e831e5929420e486d6
+        java_toolchain_sha: testing_java_sha
+        java_toolchain_url: https://ansible-molecule-test.s3.amazonaws.com/test_javatoolchain.tar.gz
