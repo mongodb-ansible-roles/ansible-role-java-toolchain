@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/compare/v1.1.0...v1.2.0) (2019-12-06)
+
+
+### Bug Fixes
+
+* Removed invalid character from meta tag ([e4d5827](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/commit/e4d58274d950f39ae8e0adcc7a44072925689127))
+
+
+### Features
+
+* Role now checks for version ([7493c32](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/commit/7493c32f613933461bae9d2642b45a4410bb308c))
+
 # [1.1.0](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/compare/v1.0.0...v1.1.0) (2019-11-05)
 
 
