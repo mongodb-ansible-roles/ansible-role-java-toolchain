@@ -3,7 +3,8 @@ Ansible role for java-toolchain
 
 Installs the java toolchain
 
-[![CircleCI](https://img.shields.io/circleci/build/github/mongodb-ansible-roles/ansible-role-java-toolchain/master?style=flat-square)](https://circleci.com/gh/mongodb-ansible-roles/ansible-role-java-toolchain)
+![](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/workflows/Molecule%20Test/badge.svg)
+![](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/workflows/Release/badge.svg)
 
 Explanation
 -----------
@@ -19,6 +20,12 @@ If the version file and `java_toolchain_sha` match, the toolchain will not be do
 If the versions don't match, the new toolchain will be downloaded to the `/tmp` directory and then moved into the `/opt/java/revisions` directory. From there, the toolchain installation script is run.
 
 This role will delete existing java toolchains if the version specified doesn't match.
+
+Exception for PPC and s390x
+---------------------------
+
+The strategy for the Java toolchain on PPC and s390x is different than x86_64 and aarm64 machines.
+Oracle does not offer a packages JDK for these platforms. Instead, we install Java through the system package manager and then create a "fake" Java toolchain at `/opt/java`. The jdk, usually jdk8, is then symlinked to that location from `/etc/alternatives/java_sdk_1.8.0` to `/opt/java/jdk8`. This is needed to run ant.
 
 Requirements
 ------------
