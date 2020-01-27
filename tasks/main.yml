@@ -9,6 +9,12 @@
 
 - name: Include other architecture tasks
   include_tasks: setup-other.yml
-  when: 
+  when:
     - ansible_architecture != "ppc64le"
     - ansible_architecture != "s390x"
+
+- name: Create version file
+  become: true
+  copy:
+    content: "{{ java_toolchain_sha }}"
+    dest: "{{ java_toolchain_final_dest }}/toolchain_version"

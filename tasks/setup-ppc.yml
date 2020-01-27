@@ -9,7 +9,7 @@
   become: true
   file:
     state: directory
-    path: /opt/java 
+    path: /opt/java
     mode: "0755"
 
 - name: Create symlink to installed java
