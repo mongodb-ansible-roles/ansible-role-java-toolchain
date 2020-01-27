@@ -1,20 +1,14 @@
 ---
-- name: Remove old toolchain
-  become: true
-  file:
-    path: "{{ java_toolchain_final_dest }}"
-    state: absent
-  when:
-    - toolchain_archive_contents.changed
+- name: Include ppc tasks
+  include_tasks: setup-ppc.yml
+  when: ansible_architecture == "ppc64le"
 
-- name: Move java directory from tmp to opt
-  become: true
-  command: mv /tmp/java {{ java_toolchain_final_dest }}
-  when:
-    - toolchain_archive_contents.changed
+- name: Include z series tasks
+  include_tasks: setup-z.yml
+  when: ansible_architecture == "s390x"
 
-- name: Create version file
-  become: true
-  copy:
-    content: "{{ java_toolchain_sha }}"
-    dest: "{{ java_toolchain_final_dest }}/toolchain_version"
+- name: Include other architecture tasks
+  include_tasks: setup-other.yml
+  when: 
+    - ansible_architecture != "ppc64le"
+    - ansible_architecture != "s390x"

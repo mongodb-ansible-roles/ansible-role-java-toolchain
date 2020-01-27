@@ -1,0 +1,20 @@
+---
+- name: Remove old toolchain
+  become: true
+  file:
+    path: "{{ java_toolchain_final_dest }}"
+    state: absent
+  when:
+    - toolchain_archive_contents.changed
+
+- name: Move java directory from tmp to opt
+  become: true
+  command: mv /tmp/java {{ java_toolchain_final_dest }}
+  when:
+    - toolchain_archive_contents.changed
+
+- name: Create version file
+  become: true
+  copy:
+    content: "{{ java_toolchain_sha }}"
+    dest: "{{ java_toolchain_final_dest }}/toolchain_version"

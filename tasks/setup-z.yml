@@ -1,0 +1,20 @@
+---
+- name: Install jdk
+  become: true
+  package:
+    name: java
+    state: present
+
+- name: Create java toolchain directories
+  become: true
+  file:
+    state: directory
+    path: /opt/java 
+    mode: "0755"
+
+- name: Create symlink to installed java
+  become: true
+  file:
+    src: /etc/alternatives/java_sdk_1.8.0
+    dest: /opt/java/jdk8
+    state: link
