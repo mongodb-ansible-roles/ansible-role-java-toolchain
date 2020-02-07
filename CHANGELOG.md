@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/compare/v1.2.0...v1.3.0) (2020-02-07)
+
+
+### Features
+
+* Added power and Z support ([031b341](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/commit/031b3412e62fa057b8447898cccbf8525da973b3))
+* Added support for Z and ppc ([f03a50a](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/commit/f03a50a9e4a2a36651e54e5f40104ca0ad474387))
+
 # [1.2.0](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/compare/v1.1.0...v1.2.0) (2019-12-06)
 
 
