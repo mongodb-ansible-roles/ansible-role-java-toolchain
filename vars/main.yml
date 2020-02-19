@@ -2,6 +2,7 @@
 distro_dict:
   Debian: linux
   Darwin: macosx
+  RedHat: linux
 distro: "{{ distro_dict[ansible_os_family] }}"
 architecture_dict:
   x86_64: x64
