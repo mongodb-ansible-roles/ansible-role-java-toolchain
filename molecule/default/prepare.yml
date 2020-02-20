@@ -15,18 +15,3 @@
           - sudo
           - tar
         state: present
-
-- gather_facts: false
-  become: true
-  name: Create
-  hosts: all
-  tasks:
-    - name: Create temp efs directory
-      file:
-        path: /tmp/efs
-        state: directory
-
-    - name: Create temp file in efs directory
-      file:
-        path: /tmp/efs/test
-        state: touch
