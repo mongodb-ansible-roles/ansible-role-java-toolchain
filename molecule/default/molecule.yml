@@ -8,19 +8,14 @@ lint:
 platforms:
   - name: debian9
     image: debian:9
-    privileged: true
   - name: debian10
     image: debian:10
-    privileged: true
   - name: rhel8
     image: registry.redhat.io/ubi8
-    privileged: true
   - name: rhel7
     image: registry.redhat.io/ubi7
-    privileged: true
   - name: rhel6
     image: registry.redhat.io/rhel6
-    privileged: true
 provisioner:
   name: ansible
   lint:
