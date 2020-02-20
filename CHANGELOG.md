@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/compare/v1.3.0...v1.4.0) (2020-02-20)
+
+
+### Bug Fixes
+
+* containers dont need privileges ([911a413](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/commit/911a41355c5815ee61542572dfd18fed342d1653))
+
+
+### Features
+
+* Adding rhel support for java toolchain ([58baaf0](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/commit/58baaf08824432a9ff289ece0e8aa365001c9093))
+
 # [1.3.0](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/compare/v1.2.0...v1.3.0) (2020-02-07)
 
 
