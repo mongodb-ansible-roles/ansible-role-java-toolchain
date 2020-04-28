@@ -3,15 +3,43 @@
   name: Setup RHEL6
   hosts: rhel6
   tasks:
-    - name: Subscribe container
-      redhat_subscription:
-        auto_attach: true
-        force_register: true
-        password: "{{ lookup('env','REDHAT_REGISTRY_SERVICE_ACCOUNT_PASSWORD') }}"
-        username: "{{ lookup('env','REDHAT_REGISTRY_SERVICE_ACCOUNT_USERNAME') }}"
+    - name: Add Artifactory repos
+      yum_repository:
+        baseurl: "{{ item.baseurl }}"
+        description: "{{ item.description }}"
+        gpgcheck: "{{ item.gpgcheck }}"
+        name: "{{ item.name }}"
+      loop:
+        - baseurl: "http://{{ lookup('env', 'ARTIFACTORY_USERNAME') }}:{{ lookup('env', 'ARTIFACTORY_PASSWORD') }}@artifactory.corp.mongodb.com/artifactory/rpm/6.10/updates/x86_64"  # noqa 204
+          description: Artifactory RHEL 6 Updates Packages
+          gpgcheck: false
+          name: rhel6updates
+        - baseurl: "http://{{ lookup('env', 'ARTIFACTORY_USERNAME') }}:{{ lookup('env', 'ARTIFACTORY_PASSWORD') }}@artifactory.corp.mongodb.com/artifactory/rpm/6.10/os/x86_64"  # noqa 204
+          description: Artifactory RHEL 6 OS Packages
+          gpgcheck: false
+          name: rhel6os
     - name: Install packages
       yum:
         name:
           - sudo
           - tar
         state: present
+
+- gather_facts: false
+  hosts: archlinux
+  name: Prepare Archlinux
+  tasks:
+    - name: Raw update pacman database
+      raw: pacman -Syu --noconfirm
+      changed_when: false
+    - name: Raw install python
+      raw: pacman -S python3 --noconfirm
+      changed_when: false
+    - name: Install sudo
+      pacman:
+        name: sudo
+        state: present
+    - name: Create arch user
+      user:
+        name: arch
+        group: root
