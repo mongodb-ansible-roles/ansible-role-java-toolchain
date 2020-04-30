@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/compare/v1.5.0...v1.5.1) (2020-04-30)
+
+
+### Bug Fixes
+
+* Add missing var for Archlinux ([57163e3](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/commit/57163e352313dbf0e9f49a551e2503477131e8ea))
+
 # [1.5.0](https://github.com/mongodb-ansible-roles/ansible-role-java-toolchain/compare/v1.4.0...v1.5.0) (2020-04-30)
 
 
