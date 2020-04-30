@@ -1,5 +1,6 @@
 ---
 distro_dict:
+  Archlinux: linux
   Debian: linux
   Darwin: macosx
   RedHat: linux
