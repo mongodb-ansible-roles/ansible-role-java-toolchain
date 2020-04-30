@@ -10,11 +10,11 @@
         gpgcheck: "{{ item.gpgcheck }}"
         name: "{{ item.name }}"
       loop:
-        - baseurl: "http://{{ lookup('env', 'ARTIFACTORY_USERNAME') }}:{{ lookup('env', 'ARTIFACTORY_PASSWORD') }}@artifactory.corp.mongodb.com/artifactory/rpm/6.10/updates/x86_64"  # noqa 204
+        - baseurl: "https://{{ lookup('env', 'ARTIFACTORY_USERNAME') }}:{{ lookup('env', 'ARTIFACTORY_PASSWORD') }}@artifactory.corp.mongodb.com/artifactory/rpm/6.10/updates/x86_64"  # noqa 204
           description: Artifactory RHEL 6 Updates Packages
           gpgcheck: false
           name: rhel6updates
-        - baseurl: "http://{{ lookup('env', 'ARTIFACTORY_USERNAME') }}:{{ lookup('env', 'ARTIFACTORY_PASSWORD') }}@artifactory.corp.mongodb.com/artifactory/rpm/6.10/os/x86_64"  # noqa 204
+        - baseurl: "https://{{ lookup('env', 'ARTIFACTORY_USERNAME') }}:{{ lookup('env', 'ARTIFACTORY_PASSWORD') }}@artifactory.corp.mongodb.com/artifactory/rpm/6.10/os/x86_64"  # noqa 204
           description: Artifactory RHEL 6 OS Packages
           gpgcheck: false
           name: rhel6os
